@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { faker } from '@faker-js/faker';
+
+
 
 function App() {
+  const[cat, setCat] = useState([])
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCat = async () => {
+      try {
+        const response = await fetch (
+          'https://api.thecatapi.com/v1/images/search?limit=20'
+        );
+        if (!response.ok) {
+          throw new Error (response.statusText)
+        }
+        console.log (cat)
+            const data = await response.json();
+            setCat(data);
+      } catch (error) {
+        setError('!Could not fetch data!');
+        // console.log(error.message);
+      }
+    };
+    fetchCat();
+  }, []);
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+		<div className="App">
+			{cat.map((cat, index) => (
+				<div key={index}>
+					{error && <p>{error}</p>}
+					<img src={cat.url} alt="cat image"/>
+				</div>
+			))}
+		</div>
+	);
 }
 
 export default App;

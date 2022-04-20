@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { faker } from '@faker-js/faker';
 
-
+// hello
 
 function App() {
   const[cat, setCat] = useState([])

@@ -22,7 +22,7 @@ function App() {
             setCat(data);
       } catch (error) {
         setError('!Could not fetch data!');
-        // console.log(error.message);
+        console.log(error.message);
       }
     };
     fetchCat();

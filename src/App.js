@@ -3,8 +3,6 @@ import './App.css';
 import { faker } from '@faker-js/faker';
 
 
-//Setting up hooks
-
 function App() {
   const[cat, setCat] = useState([])
   const [error, setError] = useState(null);

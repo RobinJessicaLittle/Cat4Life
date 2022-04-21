@@ -8,9 +8,13 @@ import { faker } from '@faker-js/faker';
 function App() {
   const[cat, setCat] = useState([])
   const [error, setError] = useState(null);
+
+
+
+
+
 //Function to Fetch Images 
 
-  useEffect(() => {
     const fetchCat = async () => {
       try {
         const response = await fetch (
@@ -28,16 +32,17 @@ function App() {
       }
     };
     fetchCat();
+
 //Function to fetch faker data
     const fetchData = () => {
       const array = [];
 
       for (let i = 0; i < 10; i++) {
         const name = faker.name.findName();
-        const price = faker.commerce.price(50, 1000);
-        const breed = faker.animal.cat();
+        const price = faker.commerce.price(50, 150);
+        const breed = faker.animal.cat([]);
 
-        array.push({name, price});
+        array.push({name, price, breed});
       }
 
       return array;
@@ -52,9 +57,10 @@ function App() {
           cat.id = i;
           return cat;
         });
-        setCats(data);
+        setCat(data);
       }) ();
     }, []);
+  
 
 
     return (
@@ -63,15 +69,20 @@ function App() {
           <div key={index}>
             {error && <p>{error}</p>}
             <img src={cat.url} alt="cat image"/>
-            <h3> {cat.name}</h3>
-            <h3> {cat.breed}</h3>
-            <p>£{cat.price}</p>
-            <button>Add Crate</button>
+            <h3> {cat?.name}</h3>
+            <h3> {cat?.breed}</h3>
+            <p>£{cat?.price}</p>
+            <button>Add Too Crate</button>
           </div>
         ))}
       </div>
     );
-[];
+}
 
  
 export default App;
+
+/*Questions for Christian:
+1. Why are things looping 
+2. Why is Breed and price not returning 
+3. Clue's on merging errors for github*/

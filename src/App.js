@@ -33,10 +33,10 @@ const fetchCat = async () => {
   }
 };
 
+
 //Function to fetch faker data
     const fetchData = () => {
       const array = [];
-
       for (let i = 0; i < 10; i++) {
         const name = faker.name.findName();
         const price = faker.commerce.price(50, 150)
@@ -63,7 +63,8 @@ const fetchCat = async () => {
 
     return (
       <div>
-        <NavBar/>
+        <Navbar
+              />
         <div className="App">
           {cat.map((item, index) => (
             <div key={index}>
@@ -74,10 +75,11 @@ const fetchCat = async () => {
               <button>Add Too Crate</button>
             </div>
             ))}
-          </div>
+        </div>
       </div>
-    );
+      );
 }
 
  
 export default App;
+

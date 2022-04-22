@@ -6,9 +6,7 @@ export const HeaderContainer = styled.div `
     flex-wrap: wrap;
     width: 100%;
     height: 60vh;
-    border-bottom: 5px solid black;
 `;
-
 
 export const HeaderWrapper = styled.div `
     display: flex;
@@ -17,9 +15,7 @@ export const HeaderWrapper = styled.div `
     justify-content: space-around;
     width: 100%;
     height: 15vh;
-    border: 2px solid blue;
 `
-
 export const Logo = styled.img `
     width: 35%;
     height: 15vh;
@@ -52,24 +48,16 @@ export const WelcomePage = styled.div `
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    border: 2px solid red;
 `
 
 export const WelcomeText = styled.h2 `
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 50vh;
-    font-size: 35px;
+    width: 100%;
+    font-size: 40px;
 `
-export const WelcomeImage = styled.img `
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    image-size: 60%;
-    width: 35%;
-    z-index: -1;
-`
+
 export const Sectionbreak = styled.div `
     display: flex;
     flex-direction: row;

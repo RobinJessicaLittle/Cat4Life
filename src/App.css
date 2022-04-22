@@ -3,10 +3,9 @@
   background-image: url(pawprint0.jpg);
   text-align: center;
   background-repeat: repeat;
-
 }
 
-#card{
+#card {
   margin-top: 100px;
   margin-left: 15px;
   margin-right: 15px;
@@ -19,18 +18,17 @@
   text-align: center;
   height: 300px;
   width: 220px;
-  
 }
 
-#card img{
+#card img {
   border-radius: 20px;
   height: 60%;
   width: 90%;
   object-fit: cover;
 }
 
-#addBtn{
-  background-color:rgb(160, 160, 160);
+#addBtn {
+  background-color: rgb(160, 160, 160);
   border: 2px solid rgb(25, 25, 25);
   border-radius: 12px;
   width: 60%;
@@ -39,8 +37,94 @@
   color: rgb(75, 125, 105);
 }
 
-#addBtn:hover{
-  background-color:rgb(161, 161, 161);
+#addBtn:hover {
+  background-color: rgb(161, 161, 161);
   border: 2px solid aquamarine;
   color: aquamarine;
+}
+
+.close-button {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: black;
+  z-index: 50;
+  transition: all 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay--open {
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+.modal {
+  background: white;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  right: 30%;
+  top: 25%;
+  position: fixed;
+  width: calc(100% / 3);
+  transform: translateY(50%);
+  transition: all 0.5s;
+  overflow: scroll;
+  padding: 50px;
+  display: none;
+  border-radius: 5px;
+}
+
+.modal--open {
+  transform: translateY(0%);
+  display: block;
+}
+
+.basket {
+  width: 40px;
+  height: 40px;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+.modal img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.modal-tile {
+  padding-bottom: 25px;
+}
+
+.basket {
+  width: 40px;
+  height: 40px;
+  color: black;
+  cursor: pointer;
+}
+
+.modal img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.modal-tile {
+  padding-bottom: 25px;
 }

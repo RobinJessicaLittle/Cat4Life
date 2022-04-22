@@ -36,7 +36,7 @@ export const Crate = styled.div `
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 35%;
+    width: 45%;
     border: 2px solid green;
 ` 
 export const Crateimage = styled.img `
@@ -44,7 +44,7 @@ export const Crateimage = styled.img `
     flex-direction: row;
     flex-wrap: wrap;
     
-    width: 50%;
+    width: 30%;
 `
 export const WelcomePage = styled.div `
     display: flex;
@@ -68,6 +68,7 @@ export const WelcomeImage = styled.img `
     flex-wrap: wrap;
     image-size: 60%;
     width: 35%;
+    z-index: -1;
 `
 export const Sectionbreak = styled.div `
     display: flex;
@@ -80,4 +81,12 @@ export const Sectionbreak = styled.div `
     color: white;
 
     font-size: 30px;
+`
+export const Modal = styled.img `
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 50%;
+    z-index: 2;
 `

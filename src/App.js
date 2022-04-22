@@ -14,7 +14,11 @@ function App() {
 	const addToBasket = (item) => {
 		setBasket([...basket, item]);
 	};
-	
+	// remove cat from basket
+  // const removeItemFromBasket = (item) => {
+  //   const remainingBasketItems = basket.filter((cat) => cat.id !== item.id);
+  //   setBasket(remainingBasketItems);
+  // };
 
 
 //Function to Fetch Images 
@@ -26,7 +30,7 @@ useEffect(() => {
 const fetchCat = async () => {
   try {
     const response = await fetch (
-      'https://api.thecatapi.com/v1/images/search?limit=20'
+      'https://api.thecatapi.com/v1/images/search?limit=21'
     );
     if (!response.ok) {
       throw new Error (response.statusText)
@@ -44,7 +48,7 @@ const fetchCat = async () => {
 //Function to fetch faker data
     const fetchData = () => {
       const array = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 21; i++) {
         const name = faker.name.findName();
         const price = faker.commerce.price(50, 150)
 
@@ -70,7 +74,7 @@ const fetchCat = async () => {
     return (
 
       <div id="main">
-        <Navbar basket = {basket}
+        <Navbar basket = {basket} 
               />
         <div className="App">
           {cat.map((item, index) => (

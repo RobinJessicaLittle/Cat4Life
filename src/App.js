@@ -62,17 +62,17 @@ const fetchCat = async () => {
 
 
     return (
-      <div>
+      <div id="main">
         <Navbar
               />
         <div className="App">
           {cat.map((item, index) => (
-            <div key={index}>
+            <div id="card" key={index}>
               {error && <p>{error}</p>}
               <img src={item.pics} alt="cat image"/>
               <h3> {item.name}</h3>
               <p>£{item.price}</p>
-              <button>Add Too Crate</button>
+              <button id="addBtn">Add Too Crate</button>
             </div>
             ))}
         </div>

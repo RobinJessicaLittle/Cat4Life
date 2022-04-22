@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { faker } from '@faker-js/faker';
 import Navbar from './components/NavBar';
-
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -75,6 +75,10 @@ const fetchCat = async () => {
               <button>Add Too Crate</button>
             </div>
             ))}
+        </div>
+        <div>
+          <Footer
+          />
         </div>
       </div>
       );

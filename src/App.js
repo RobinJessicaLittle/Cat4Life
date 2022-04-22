@@ -8,6 +8,13 @@ import Navbar from './components/NavBar';
 function App() {
   const[cat, setCat] = useState([])
   const [error, setError] = useState(null);
+  const [basket, setBasket] = useState([]);
+
+	//add cat to basket
+	const addToBasket = (item) => {
+		setBasket([...basket, item]);
+	};
+	
 
 
 //Function to Fetch Images 
@@ -58,21 +65,21 @@ const fetchCat = async () => {
         setCat(data);
       }) ();
     }, []);
-  
 
 
     return (
       <div>
-        <Navbar
-              />
+        <Navbar basket = {basket}
+            />
         <div className="App">
           {cat.map((item, index) => (
             <div key={index}>
               {error && <p>{error}</p>}
-              <img src={item.pics} alt="cat image"/>
+              <img src={item.pics} alt="cat picture"/>
               <h3> {item.name}</h3>
               <p>£{item.price}</p>
-              <button>Add Too Crate</button>
+              <button onClick={() => {addToBasket(cat)}}> add to basket </button>
+              
             </div>
             ))}
         </div>

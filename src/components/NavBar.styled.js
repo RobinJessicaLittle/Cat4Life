@@ -33,7 +33,6 @@ export const Crate = styled.div `
     flex-wrap: wrap;
     justify-content: center;
     width: 45%;
-    border: 2px solid green;
 ` 
 export const Crateimage = styled.img `
     display: flex;

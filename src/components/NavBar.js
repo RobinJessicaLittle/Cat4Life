@@ -2,8 +2,9 @@ import { HeaderContainer, HeaderWrapper, Logo, NavbarRight, Crate, Crateimage, W
 import logo from '../logo.jpeg';
 import welcome from '../welcome.jpeg';
 import emptyCrate from '../emptyCrate.jpeg';
+import Modal from './Modal';
 
-const Navbar = () => {
+const Navbar = ({ basket }) => {
 	return (
 
 		<HeaderContainer>
@@ -13,7 +14,9 @@ const Navbar = () => {
                 </Logo>
                 <NavbarRight>
                     <Crate> 
-                        <Crateimage src={emptyCrate} />
+                        <Crateimage src={emptyCrate} alt = "shopping crate"/>
+                        <Modal basket={basket} />
+
                     </Crate>
                 </NavbarRight>
             </HeaderWrapper>

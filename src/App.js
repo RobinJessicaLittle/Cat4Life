@@ -68,18 +68,21 @@ const fetchCat = async () => {
 
 
     return (
-      <div>
+
+      <div id="main">
         <Navbar basket = {basket}
-            />
+              />
         <div className="App">
           {cat.map((item, index) => (
-            <div key={index}>
+            <div id="card" key={index}>
               {error && <p>{error}</p>}
               <img src={item.pics} alt="cat picture"/>
               <h3> {item.name}</h3>
               <p>£{item.price}</p>
-              <button onClick={() => {addToBasket(cat)}}> add to basket </button>
+
+              <button id="addBtn" onClick={() => {addToBasket(cat)}}> add to basket </button>
               
+
             </div>
             ))}
         </div>
